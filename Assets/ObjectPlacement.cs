@@ -42,8 +42,7 @@ public class ObjectPlacement : MonoBehaviour
 
         if(placementPoseIsValid && 
            Input.touchCount > 0 && 
-           Input.GetTouch(0).phase == TouchPhase.Began
-         && GameObject.Find("chick Variant") == null)
+           Input.GetTouch(0).phase == TouchPhase.Began)
         {
             PlaceObject();
         }
