@@ -12,7 +12,7 @@ public class ObjectPlacement : MonoBehaviour
     //interact with the world around us
     private ARSessionOrigin arOrigin;
     //
-    private Pose placementPose;
+    public static Pose placementPose;
     private bool placementPoseIsValid = false;
     public GameObject placementIndicator;
     public GameObject objectToPlace;
@@ -42,7 +42,8 @@ public class ObjectPlacement : MonoBehaviour
 
         if(placementPoseIsValid && 
            Input.touchCount > 0 && 
-           Input.GetTouch(0).phase == TouchPhase.Began)
+           Input.GetTouch(0).phase == TouchPhase.Began &&
+           !ObjectDetector.isPetOnTheScene)
         {
             PlaceObject();
         }
